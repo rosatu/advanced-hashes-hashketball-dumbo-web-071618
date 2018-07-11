@@ -172,13 +172,13 @@ def player_stats(name)
 end
 
 def home_and_away_players
+  binding.pry
   game_hash[:home][:players].merge(game_hash[:away][:players])
 end 
 
 def big_shoe_rebounds
   biggest_shoe = nil
   home_and_away_players.each do |player, stat|
-    binding.pry
     if shoe_size > biggest_shoe
        biggest_shoe = shoe_size
     end
@@ -189,7 +189,7 @@ def big_shoe_rebounds
      game_hash.values[:players][player_name][:rebounds] 
      end 
   end     
-end
+
 
   
    
