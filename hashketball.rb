@@ -179,20 +179,16 @@ def big_shoe_rebounds
   biggest_shoe = nil
   game_hash.values.each do |players, stat_list|
     stat_list.map do |aspect, num|
-      if aspect == :shoe
     if shoe_size > biggest_shoe
        biggest_shoe = shoe_size
     end
-    end
   end  
   game_hash.values[:players].keys each do |player_name|
-  if game_hash.values[:players][player_name][:shoe] == biggest_shoe
+     if game_hash.values[:players][player_name][:shoe] == biggest_shoe
      game_hash.values[:players][player_name][:rebounds] 
-  end 
-  end
-end  
-    
-
+     end 
+  end     
+end
 
   
    
