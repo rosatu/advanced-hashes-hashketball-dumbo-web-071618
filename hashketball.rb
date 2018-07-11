@@ -114,10 +114,8 @@ def num_points_scored(player_name)
 end
  
 def shoe_size(player_name)  
-  if game_hash[:home][:players].keys.include?(player_name)
-   game_hash[:home][:players]["#{player_name}"][:shoe]
- elsif game_hash[:away][:players].keys.include?(player_name)
-   game_hash[:away][:players]["#{player_name}"][:shoe]
+  if home_and_away_players.keys.include?(player_name)
+  home_and_away_players["#{player_name}"][:shoe]
   end 
 end 
 
@@ -160,10 +158,8 @@ def player_numbers(team_name)
 end
 
 def player_stats(name)
-  if    game_hash[:home][:players].keys.include?(name)
-        game_hash[:home][:players][name]
-  elsif game_hash[:away][:players].keys.include?(name)
-        game_hash[:away][:players][name]
+  if    home_and_away_players.keys.include?(name)
+        home_and_away_players[name]
   end 
 end
 
