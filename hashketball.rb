@@ -177,14 +177,14 @@ end
 
 def big_shoe_rebounds
   biggest_shoe = nil
+  binding.pry
   home_and_away_players.values.each do |stat, val|
-    binding.pry
        if stat == :shoe && biggest_shoe = nil || val >  biggest_shoe 
        biggest_shoe = val
      end
   end   
-  home_and_away_players.keys.each do |player_name, stat_list|
-     if player_name[:shoe] == biggest_shoe
+  home_and_away_players.keys.each do |stat, val|
+     if stat[:shoe] == biggest_shoe
         player_name[:rebounds]
      end
   end   
