@@ -140,10 +140,6 @@ def team_names
   teamsArray
 end
 
-def home_and_away_players
-  home_players = ["Alan Anderson","Reggie Evans", "Brook Lopez",	"Mason Plumlee",	"Jason Terry"]
-  away_players = ["Jeff Adrien",	"Bismak Biyombo",	"DeSagna Diop",	"Ben Gordon",	"Brendan Haywood"]
-end  
 
 def player_numbers(team_name)
   numList = []
@@ -175,11 +171,14 @@ def player_stats(name)
   end 
 end
 
+def home_and_away_players
+  game_hash[:home][:players].merge(game_hash[:away][:players])
+end 
+
 def big_shoe_rebounds
   biggest_shoe = nil
-   binding.pry
-  game_hash.values.each do |players|
-    players.values do |player, stat_list|
+  home_and_away_players.each do |player, stat|
+    binding.pry
     if shoe_size > biggest_shoe
        biggest_shoe = shoe_size
     end
