@@ -176,16 +176,15 @@ def home_and_away_players
 end 
 
 def big_shoe_rebounds
+  rebounds = 0
   biggest_shoe = 0
-  home_and_away_players.values.each do |stat, val|
-       if stat == :shoe && val >  biggest_shoe 
-       biggest_shoe = val
+  home_and_away_players.each do |player, player_hash|
+    if player_hash[:shoe] > biggest_shoe 
+      biggest_shoe = player_hash[:shoe]
+       rebounds = player_hash[:rebounds]
      end
-  end 
-  binding.pry
-     if stat[:shoe] == biggest_shoe
-        player_name[:rebounds]
-     end
+  end  
+  rebounds
 end  
 
 
