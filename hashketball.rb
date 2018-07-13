@@ -173,12 +173,16 @@ def big_shoe_rebounds
   home_and_away_players.each do |player, player_hash|
     if player_hash[:shoe] > biggest_shoe 
       biggest_shoe = player_hash[:shoe]
-       rebounds = player_hash[:rebounds]
+      rebounds = player_hash[:rebounds]
      end
   end  
   rebounds
 end  
 
-
+def slam_dunks(name)
+  if home_and_away_players.keys.include?(name)
+  home_and_away_players[name][:slam_dunks] 
+  end  
+end   
   
    
